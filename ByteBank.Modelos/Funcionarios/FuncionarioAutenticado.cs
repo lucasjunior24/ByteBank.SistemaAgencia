@@ -1,4 +1,5 @@
-﻿using ByteBank.Models;
+﻿using ByteBank.Modelos;
+using ByteBank.Models;
 
 namespace Modelos.Funcionarios
 {
@@ -7,12 +8,12 @@ namespace Modelos.Funcionarios
         protected FuncionarioAutenticado(double salario, string cpf) : base(salario, cpf)
         {
         }
-
+        private AutenticacaoHelper _autenticacaoHelper = new AutenticacaoHelper();
         public string Senha { get; set; }
 
         public bool Autenticar(string senha)
         {
-            return Senha == senha;
+            return _autenticacaoHelper.CompararSenhas(Senha, senha);
         }
     }
 }
