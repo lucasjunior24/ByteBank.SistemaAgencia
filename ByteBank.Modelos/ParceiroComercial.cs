@@ -1,6 +1,6 @@
 ﻿using ByteBank.Modelos;
 
-namespace ByteBank.Models
+namespace ByteBank.Modelos
 {
     public class ParceiroComercial : IAutenticavel
     {

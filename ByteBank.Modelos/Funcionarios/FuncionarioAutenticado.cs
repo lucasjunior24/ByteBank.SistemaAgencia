@@ -1,5 +1,4 @@
 ﻿using ByteBank.Modelos;
-using ByteBank.Models;
 
 namespace Modelos.Funcionarios
 {

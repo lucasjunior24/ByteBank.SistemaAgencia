@@ -1,16 +1,18 @@
-﻿using ByteBank.Models;
-using Modelos.Funcionarios;
-using System;
+﻿using System;
+using System.Data;
+using ByteBank.Modelos;
 
 namespace ByteBank.SistemaAgencia
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            Funcionario funcionario = null;
-            ContaCorrente conta = new ContaCorrente(443, 322323);
-            Console.WriteLine("Numero: "+ conta.Numero);
+            Datas data = new Datas();
+            data.MostrarDatas();
+
+            Console.ReadLine(); 
         }
+
     }
 }

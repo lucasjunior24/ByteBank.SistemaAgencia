@@ -1,4 +1,4 @@
-﻿namespace ByteBank.Models
+﻿namespace ByteBank.Modelos
 {
     public class Cliente
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ByteBank.Models
+namespace ByteBank.Modelos
 {
     public class ContaCorrente
     {
