@@ -8,8 +8,8 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            Datas data = new Datas();
-            data.MostrarDatas();
+            ExtratorValorDeArgumentosURL extrator = new ExtratorValorDeArgumentosURL("");
+            
 
             Console.ReadLine(); 
         }
