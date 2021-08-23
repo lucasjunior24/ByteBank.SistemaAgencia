@@ -31,8 +31,21 @@ namespace ByteBank.SistemaAgencia
 
             for (int i = 0; i < _proximaPosicao; i++)
             {
-                if(item[i].Equals(item))
+
+                if(_itens[i].Equals(item))
+                {
+                    indiceItem = i;
+                    break;
+                }
             }
+
+            for (int i = indiceItem; i < _proximaPosicao; i++)
+            {
+                _itens[i] = _itens[i + 1];
+            }
+
+            _proximaPosicao--;
+            _itens[_proximaPosicao] = null;
         }
 
         public void VerificarCapacidade(int tamanhoNecessario)
