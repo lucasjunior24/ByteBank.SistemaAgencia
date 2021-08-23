@@ -15,7 +15,6 @@ namespace ByteBank.Modelos
         public int Numero { get; }
         public int Agencia { get; }
         private double _saldo = 100;
-
         public double Saldo
         {
             get
@@ -31,6 +30,7 @@ namespace ByteBank.Modelos
                 _saldo = value;
             }
         }
+
         public ContaCorrente(int agencia, int numero)
         {
             if(agencia <= 0)
@@ -47,7 +47,6 @@ namespace ByteBank.Modelos
             TotalDeContasCriadas++;
             TaxaOperacao = 30 / TotalDeContasCriadas;
         }    
-
 
         public void Sacar(double valor)
         {
@@ -66,6 +65,7 @@ namespace ByteBank.Modelos
         {
             _saldo += valor;
         }
+
         public void Transferir(double valor, ContaCorrente contaDestino)
         {
             if (valor < 0)
@@ -84,5 +84,16 @@ namespace ByteBank.Modelos
             contaDestino.Depositar(valor);
         }
 
+        public override bool Equals(object obj)
+        {
+            ContaCorrente outraConta = obj as ContaCorrente;
+
+            if(outraConta == null)
+            {
+                return false;
+            }
+
+            return Numero == outraConta.Numero && Agencia == outraConta.Agencia;
+        }
     }
 }
