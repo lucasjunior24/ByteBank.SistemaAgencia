@@ -25,6 +25,13 @@ namespace ByteBank.SistemaAgencia
             lista.Adicionar(new ContaCorrente(433, 43434));
             lista.Adicionar(new ContaCorrente(433, 43434));
 
+            for (int i = 0; i < lista.Tamanho; i++)
+            {
+                ContaCorrente itemAtual = lista[i];
+                //ContaCorrente itemAtual = lista.GetItemNoIndice(i);
+                Console.WriteLine($"iTEM NA POSICAO {i} = conta {itemAtual.Numero}");
+            }
+
             Console.ReadLine(); 
         }
 
