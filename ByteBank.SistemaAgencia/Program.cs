@@ -10,20 +10,33 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
 
+            //Console.WriteLine(SomarVarios(1333333, 3, 4, 5, 5));
+            //Console.WriteLine(SomarVarios(5, 5));
+
+            TestaListaDeContaCorrente();
+
+            Console.ReadLine(); 
+        }
+
+        static void TestaListaDeContaCorrente()
+        {
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
 
-            lista.Adicionar(new ContaCorrente(433, 43433));
-            lista.Adicionar(new ContaCorrente(433, 434322));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
-            lista.Adicionar(new ContaCorrente(433, 43434));
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                new ContaCorrente(433, 43433),
+                new ContaCorrente(433, 34322),
+                new ContaCorrente(433, 43434),
+                new ContaCorrente(433, 43435),
+                new ContaCorrente(433, 43414)
+            };
+
+            lista.AdicionarVarios(contas);
+            lista.AdicionarVarios(
+                new ContaCorrente(433, 43434),
+                new ContaCorrente(433, 43435),
+                new ContaCorrente(433, 43414)
+            );
 
             for (int i = 0; i < lista.Tamanho; i++)
             {
@@ -31,8 +44,17 @@ namespace ByteBank.SistemaAgencia
                 //ContaCorrente itemAtual = lista.GetItemNoIndice(i);
                 Console.WriteLine($"iTEM NA POSICAO {i} = conta {itemAtual.Numero}");
             }
+        }
 
-            Console.ReadLine(); 
+        static int SomarVarios(params int[] numeros)
+        {
+            int acumulador = 0;
+            foreach (int numero in numeros)
+            {
+                acumulador += numero;
+            }
+
+            return acumulador;
         }
 
         static void TestaArray()
