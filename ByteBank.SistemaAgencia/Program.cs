@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using ByteBank.Modelos;
 using Modelos.Funcionarios;
@@ -13,7 +14,23 @@ namespace ByteBank.SistemaAgencia
             //Console.WriteLine(SomarVarios(1333333, 3, 4, 5, 5));
             //Console.WriteLine(SomarVarios(5, 5));
 
-            TestaListaDeContaCorrente();
+            //TestaListaDeContaCorrente();
+
+            List<int> idades = new List<int>();
+            idades.Add(1);
+            idades.Add(3);
+            idades.Add(4);
+            idades.Add(5);
+            idades.Add(65);
+
+            //idades.AddRange();
+
+            ListExtensoes.AdicionarVarios(idades, 3, 323, 4343, 43);
+            for (int i = 0; i < idades.Count; i++)
+            {
+                Console.WriteLine(idades[i]);
+            }
+
 
             Console.ReadLine(); 
         }
