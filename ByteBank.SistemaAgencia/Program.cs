@@ -25,7 +25,9 @@ namespace ByteBank.SistemaAgencia
 
             //idades.AddRange();
 
-            ListExtensoes.AdicionarVarios(idades, 3, 323, 4343, 43);
+            //ListExtensoes.AdicionarVarios(idades, 3, 323, 4343, 43);
+
+            idades.AdicionarVarios(2, 232, 32322, 4343);
             for (int i = 0; i < idades.Count; i++)
             {
                 Console.WriteLine(idades[i]);
