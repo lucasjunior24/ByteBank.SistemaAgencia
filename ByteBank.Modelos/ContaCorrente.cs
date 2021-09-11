@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Modelos
 {
-    public class ContaCorrente
+    public class ContaCorrente : IComparable
     {
         public static int TaxaOperacao;  
         public static int TotalDeContasCriadas { get; private set; }
@@ -94,6 +94,16 @@ namespace ByteBank.Modelos
             }
 
             return Numero == outraConta.Numero && Agencia == outraConta.Agencia;
+        }
+
+        public int CompareTo(object obj)
+        {
+            var outraConta = obj as ContaCorrente;
+            if (outraConta == null) return -1;
+
+            if (Numero < outraConta.Numero) return -1;
+            if (Numero == outraConta.Numero) return 0;
+            return 1;
         }
     }
 }
