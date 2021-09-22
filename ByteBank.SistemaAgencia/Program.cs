@@ -31,18 +31,14 @@ namespace ByteBank.SistemaAgencia
                 new ContaCorrente(341, 3)
             };
 
-            var listaContas = contas.OrderBy(conta => {
-                if (conta == null) return int.MaxValue;
-                return conta.Numero;
-                });
+            var listaContas = contas
+                .Where(conta => conta != null)
+                .OrderBy(conta => conta.Numero);
             //contas.Sort(new ComparadorContaCorrenteAgencia());
 
             foreach (var conta in listaContas)
             {
-                if (conta != null)
-                {
-                    Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
-                }
+                Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
             }
 
 
