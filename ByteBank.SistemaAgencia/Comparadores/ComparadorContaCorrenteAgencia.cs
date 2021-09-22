@@ -18,12 +18,10 @@ namespace ByteBank.SistemaAgencia.Comparadores
             {
                 return 1;
             }
-
             if (y == null)
             {
                 return -1;
             }
-
             return x.Agencia.CompareTo(y.Agencia);
         }
     }
